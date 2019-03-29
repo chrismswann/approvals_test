@@ -1,29 +1,85 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Posts</h1>
+<h1>All Posts</h1>
 
 <table>
   <thead>
     <tr>
       <th>Title</th>
       <th>Approval State</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @posts.each do |post| %>
+    <% Post.all.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= post.approval.state %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= post.approval_state %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<hr>
 
-<%= link_to 'New Post', new_post_path %>
+<h1>Approved Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Approval State</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Post.approved.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.approval_state %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr>
+
+<h1>Pending Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Approval State</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Post.pending.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.approval_state %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr>
+
+<h1>Posts Not Requiring Approval</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Approval State</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Post.not_requiring_approval.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.approval_state %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
