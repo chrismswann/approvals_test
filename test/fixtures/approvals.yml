@@ -5,3 +5,11 @@ one:
 two:
   state: approved
   approvable: two (Post)
+
+three:
+  state: pending
+  approvable: one (Comment)
+
+four:
+  state: approved
+  approvable: two (Comment)

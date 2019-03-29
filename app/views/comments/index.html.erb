@@ -1,0 +1,85 @@
+<h1>All Comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Approval State</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Comment.all.each do |comment| %>
+      <tr>
+        <td><%= comment.description %></td>
+        <td><%= comment.approval_state %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr>
+
+<h1>Approved Comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Approval State</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Comment.approved.each do |comment| %>
+      <tr>
+        <td><%= comment.description %></td>
+        <td><%= comment.approval_state %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr>
+
+<h1>Pending Comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Approval State</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Comment.pending.each do |comment| %>
+      <tr>
+        <td><%= comment.description %></td>
+        <td><%= comment.approval_state %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr>
+
+<h1>Comments Not Requiring Approval</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Approval State</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Comment.not_requiring_approval.each do |comment| %>
+      <tr>
+        <td><%= comment.description %></td>
+        <td><%= comment.approval_state %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
