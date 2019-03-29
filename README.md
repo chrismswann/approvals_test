@@ -6,8 +6,8 @@ There will be a post model, which needs to be approved. Not all posts need to be
 # To get it up and running
 Migrate the database, then load fixtures.
 
-
 # The Approval
-The approval should not have it's own controllers or views, it is just a mechanism which the affected model instance invokes to have itself approved
+An approval can be volentarily attached (not required) to another object. When including the `Approval` concern into a class, it will gain the ability to be approved.
 
-I want to call Post.approved to get all the approved posts.
+# Views
+For demonstration, the post view contains the calls to the Post model. These would usually be in the controller.
