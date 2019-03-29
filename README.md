@@ -9,3 +9,5 @@ Migrate the database, then load fixtures.
 
 # The Approval
 The approval should not have it's own controllers or views, it is just a mechanism which the affected model instance invokes to have itself approved
+
+I want to call Post.approved to get all the approved posts.
